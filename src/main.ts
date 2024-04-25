@@ -8,6 +8,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
 
+  app.enableCors({
+    origin: '*',
+  });
+
   const options = new DocumentBuilder()
     .setTitle('Documentação mks')
     .setDescription('Documentação do teste da MKS')
