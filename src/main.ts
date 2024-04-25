@@ -16,7 +16,7 @@ async function bootstrap() {
     .setTitle('Documentação mks')
     .setDescription('Documentação do teste da MKS')
     .setVersion('1.0')
-    .addServer('http://localhost:3000/', 'Local environment')
+    .addServer(process.env.URL_HOSTAGE, 'Local environment')
     .addServer('https://staging.yourapi.com/', 'Staging')
     .addServer('https://production.yourapi.com/', 'Production')
     .addTag('Your API Tag')
