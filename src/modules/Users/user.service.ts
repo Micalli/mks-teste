@@ -52,6 +52,7 @@ export class UsersService {
       email,
       password: hashedPassword,
     });
+
     const accessToken = await this.generateAccessToken(
       user.generatedMaps[0].id,
     );
