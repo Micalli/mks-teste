@@ -53,6 +53,7 @@ export class MoviesService {
 
   async deleteMovie(movieId: string) {
     const movieExist = await this.movieRepository.findMoviesById(movieId);
+
     if (!movieExist) {
       throw new BadRequestException('Filme não encontrado.');
     }
