@@ -24,15 +24,15 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Api com CRUD de filme que so pode ser acessado com usuario logado
 
-## Installation
+## Instalaçao
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Rodando o app
 
 ```bash
 # development
@@ -45,18 +45,23 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
-
+## Rotas
+### Auth
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+@Post('singup') // Criar conta
+@Post('singin') // Logar
 ```
+
+### Movies
+Para essas chamadas envie no Authorizarion Bearer Token o token do usuário
+```bash
+  @Get('movies') # Pega filmes do usuário logado
+  @Post('movies') # Cria filme do usuário logado
+  @Put('movies/:movieId') # Edita filme do usuário logado
+  @Delete('movies/:movieId') # Apaga filme do usuário logado
+```
+
+
 
 ## Support
 
