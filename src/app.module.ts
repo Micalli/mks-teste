@@ -19,7 +19,6 @@ import * as redisStore from 'cache-manager-redis-store';
       store: redisStore,
       password: process.env.PASSWORD_REDIS,
     }),
-
     DatabaseModule,
     UsersModule,
     MoviesModule,
