@@ -32,6 +32,12 @@ export class MoviesService {
       throw new BadRequestException('Usuario não encontrado.');
     }
 
+    const cachedMovies = await this.cacheManager.get('movies-' + userId);
+
+    if (cachedMovies) {
+      await this.cacheManager.del('movies-' + userId);
+    }
+
     await this.movieRepository.createUser(createMovieDto, user);
     return true;
   }
