@@ -24,7 +24,17 @@
 
 ## Description
 
-Api com CRUD de filme que so pode ser acessado com usuario logado
+Api com autentificação JWT e um CRUD de filme que so pode ser acessado com usuario autentificado.
+
+  #### URL da API - https://mks-teste-sage.vercel.app/
+  ### Ferramentes da API
+  - TypeScript
+  - Nest.js
+  - TypeORM
+  - Swagger
+  - Docker
+  - Redis
+  - PostgreSQL
 
 ## Instalaçao
 
@@ -48,18 +58,39 @@ $ npm run start:prod
 ## Rotas
 ### Auth
 ```bash
-@Post('singup') // Criar conta
-@Post('singin') // Logar
+[Post] - https://mks-teste-sage.vercel.app/singup // Criar conta
+  - body: {
+      name: string,
+      email: string,
+      password: string,
+    }
+
+[Post] - https://mks-teste-sage.vercel.app/singin // Logar
+- body: {
+      email: string,
+      password: string,
+    }
 ```
 
 ### Movies
 Para essas chamadas envie no Authorizarion Bearer Token o token do usuário
 ```bash
-  @Get('movies') # Pega filmes do usuário logado
-  @Post('movies') # Cria filme do usuário logado
-  @Put('movies/:movieId') # Edita filme do usuário logado
-  @Delete('movies/:movieId') # Apaga filme do usuário logado
+  [Get] - https://mks-teste-sage.vercel.app/movies # Pega filmes do usuário logado
+  [Post] - https://mks-teste-sage.vercel.app/movies # Cria filme do usuário logado
+   body: {
+        name: string,
+        category: string,
+      }
+
+  [Put] - https://mks-teste-sage.vercel.app/movies/:movieId # Edita filme do usuário logado
+   body: {
+      name: string,
+      category: string,
+    }
+
+  [Delete] - https://mks-teste-sage.vercel.app/movies/:movieId # Apaga filme do usuário logado
 ```
+
 
 
 
@@ -69,9 +100,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Bruno Micalli](https://www.linkedin.com/in/brunomicalli/)
 
 ## License
 
