@@ -42,7 +42,7 @@ export class UsersService {
     const emailTaken = await this.usersRepository.findUserByEmail(email);
 
     if (emailTaken) {
-      throw new ConflictException('O e-mail ja está em uso.');
+      throw new ConflictException('O e-mail ja está em uso');
     }
 
     const hashedPassword = await hash(password, 12);
